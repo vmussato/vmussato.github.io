@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "portfolio": "Meu Portfólio",
+    "blog": "Blog",
+    "projects": "Projetos"
+  },
+  "home": {
+    "greeting": "Olá, eu sou [Seu Nome]",
+    "description": "Desenvolvedor de Software apaixonado por criar soluções inovadoras e eficientes. Especializado em desenvolvimento web moderno, com experiência em React, Next.js, TypeScript e outras tecnologias de ponta.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "contact": "Contato",
+    "blogTitle": "Blog",
+    "blogDescription": "Confira meus artigos sobre desenvolvimento, tecnologia e melhores práticas",
+    "projectsTitle": "Projetos",
+    "projectsDescription": "Explore meus projetos e veja o que tenho construído"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Artigos sobre desenvolvimento, tecnologia e melhores práticas",
+    "readMore": "Ler mais",
+    "backToHome": "← Voltar para Home",
+    "backToBlog": "← Voltar para Blog"
+  },
+  "projects": {
+    "title": "Projetos",
+    "subtitle": "Confira alguns dos projetos que desenvolvi",
+    "viewProject": "Ver Projeto",
+    "backToHome": "← Voltar para Home",
+    "backToProjects": "← Voltar para Projetos",
+    "technologies": "Tecnologias"
+  },
+  "common": {
+    "profileAlt": "Foto de perfil"
+  }
+}

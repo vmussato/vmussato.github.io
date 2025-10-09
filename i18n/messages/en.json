@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "portfolio": "My Portfolio",
+    "blog": "Blog",
+    "projects": "Projects"
+  },
+  "home": {
+    "greeting": "Hi, I'm [Your Name]",
+    "description": "Software Developer passionate about creating innovative and efficient solutions. Specialized in modern web development, with experience in React, Next.js, TypeScript and other cutting-edge technologies.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "contact": "Contact",
+    "blogTitle": "Blog",
+    "blogDescription": "Check out my articles about development, technology and best practices",
+    "projectsTitle": "Projects",
+    "projectsDescription": "Explore my projects and see what I've been building"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Articles about development, technology and best practices",
+    "readMore": "Read more",
+    "backToHome": "← Back to Home",
+    "backToBlog": "← Back to Blog"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Check out some of the projects I've developed",
+    "viewProject": "View Project",
+    "backToHome": "← Back to Home",
+    "backToProjects": "← Back to Projects",
+    "technologies": "Technologies"
+  },
+  "common": {
+    "profileAlt": "Profile picture"
+  }
+}
