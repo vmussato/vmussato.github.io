@@ -15,8 +15,8 @@ export default async function ProjectPage({
 }: {
   params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params;
-  const project = await getMarkdownContent('projects', slug);
+  const { slug, locale } = await params;
+  const project = await getMarkdownContent('projects', slug, locale as 'pt-BR' | 'en' | 'es');
   const t = await getTranslations();
 
   return (

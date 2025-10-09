@@ -15,8 +15,8 @@ export default async function BlogPost({
 }: {
   params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params;
-  const post = await getMarkdownContent('blog', slug);
+  const { slug, locale } = await params;
+  const post = await getMarkdownContent('blog', slug, locale as 'pt-BR' | 'en' | 'es');
   const t = await getTranslations();
 
   return (

@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import type { Locale } from '@/i18n.config';
 
 const contentDirectory = path.join(process.cwd(), 'content');
 
@@ -17,9 +18,10 @@ export interface MarkdownPost {
 
 export async function getMarkdownContent(
   type: 'blog' | 'projects',
-  slug: string
+  slug: string,
+  locale: Locale = 'pt-BR'
 ): Promise<MarkdownPost> {
-  const fullPath = path.join(contentDirectory, type, `${slug}.md`);
+  const fullPath = path.join(contentDirectory, type, locale, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const { data, content } = matter(fileContents);
@@ -36,8 +38,8 @@ export async function getMarkdownContent(
   } as MarkdownPost;
 }
 
-export function getAllMarkdownSlugs(type: 'blog' | 'projects'): string[] {
-  const postsDirectory = path.join(contentDirectory, type);
+export function getAllMarkdownSlugs(type: 'blog' | 'projects', locale: Locale = 'pt-BR'): string[] {
+  const postsDirectory = path.join(contentDirectory, type, locale);
 
   if (!fs.existsSync(postsDirectory)) {
     return [];
@@ -50,11 +52,12 @@ export function getAllMarkdownSlugs(type: 'blog' | 'projects'): string[] {
 }
 
 export async function getAllMarkdownPosts(
-  type: 'blog' | 'projects'
+  type: 'blog' | 'projects',
+  locale: Locale = 'pt-BR'
 ): Promise<MarkdownPost[]> {
-  const slugs = getAllMarkdownSlugs(type);
+  const slugs = getAllMarkdownSlugs(type, locale);
   const posts = await Promise.all(
-    slugs.map(slug => getMarkdownContent(type, slug))
+    slugs.map(slug => getMarkdownContent(type, slug, locale))
   );
 
   return posts.sort((a, b) => {

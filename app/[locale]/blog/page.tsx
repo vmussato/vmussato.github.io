@@ -3,8 +3,13 @@ import { getAllMarkdownPosts } from "@/lib/markdown";
 import { getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
 
-export default async function BlogPage() {
-  const posts = await getAllMarkdownPosts('blog');
+export default async function BlogPage({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params;
+  const posts = await getAllMarkdownPosts('blog', locale as 'pt-BR' | 'en' | 'es');
   const t = await getTranslations();
 
   return (
