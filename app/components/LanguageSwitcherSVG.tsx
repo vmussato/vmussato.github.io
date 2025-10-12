@@ -3,15 +3,9 @@
 import { useParams } from 'next/navigation';
 import { usePathname, useRouter } from '@/lib/navigation';
 import { locales, localeNames, type Locale } from '@/i18n.config';
+import { BrazilFlag, USAFlag, SpainFlag } from './flags';
 
-  // Mapear locales para emojis de bandeiras
-  const flagEmojis: Record<Locale, string> = {
-    'pt-BR': '🇧🇷',
-    'en': '🇺🇸',
-    'es': '🇪🇸'
-  };
-
-export default function LanguageSwitcher() {
+export default function LanguageSwitcherSVG() {
   const params = useParams();
   const pathname = usePathname();
   const router = useRouter();
@@ -22,21 +16,30 @@ export default function LanguageSwitcher() {
     router.replace(pathname, { locale: newLocale });
   };
 
+  // Mapear locales para componentes de bandeiras
+  const flagComponents: Record<Locale, React.FC<{ size?: number; className?: string }>> = {
+    'pt-BR': BrazilFlag,
+    'en': USAFlag,
+    'es': SpainFlag
+  };
+
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-2">
       {locales.map((locale) => {
+        const FlagComponent = flagComponents[locale];
+        
         return (
           <button
             key={locale}
             onClick={() => handleLocaleChange(locale)}
-            className={`p-2 rounded-md text-lg transition-all transform hover:scale-110 ${
+            className={`p-2 rounded-lg transition-all duration-200 transform hover:scale-110 hover:shadow-md ${ 
               currentLocale === locale
-                ? 'bg-gray-800 dark:bg-white shadow-lg ring-2 ring-blue-500'
-                : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600'
+                ? 'bg-blue-100 dark:bg-blue-900 shadow-lg ring-2 ring-blue-500 ring-opacity-50'
+                : 'bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700'
             }`}
             title={localeNames[locale]}
           >
-            <span className="text-xl">{flagEmojis[locale]}</span>
+            <FlagComponent size={24} />
           </button>
         );
       })}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from '@/lib/navigation';
 import { getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+// import LanguageSwitcher from '../components/LanguageSwitcherSVG'; // Use esta linha para versão SVG
 
 export default async function Home() {
   const t = await getTranslations();
