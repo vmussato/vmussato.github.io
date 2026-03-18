@@ -4,6 +4,8 @@ import { getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 // import LanguageSwitcher from '../components/LanguageSwitcherSVG'; // Use esta linha para versão SVG
 
+export const dynamic = 'force-static';
+
 export default async function Home() {
   const t = await getTranslations();
 
