@@ -3,8 +3,8 @@ title: "Portfólio Pessoal"
 date: "2024-03-01"
 description: "Um site de portfólio moderno construído com Next.js, TypeScript e Tailwind CSS"
 tech: "Next.js, TypeScript, Tailwind CSS, Markdown"
-github: "https://github.com/seu-usuario/portfolio"
-demo: "https://seu-portfolio.vercel.app"
+github: "https://github.com/vmussato/vmussato.github.io"
+demo: "https://vmussato.github.io"
 ---
 
 # Portfólio Pessoal
@@ -73,7 +73,7 @@ Pretendo adicionar:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/portfolio.git
+git clone https://github.com/vmussato/vmussato.github.io.git
 
 # Instale as dependências
 npm install

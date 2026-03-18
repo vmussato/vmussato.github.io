@@ -3,7 +3,7 @@ title: "App de Gerenciamento de Tarefas"
 date: "2024-02-20"
 description: "Aplicação fullstack para gerenciar tarefas com autenticação, banco de dados e API REST"
 tech: "React, Node.js, Express, PostgreSQL, JWT"
-github: "https://github.com/seu-usuario/task-manager"
+github: "https://github.com/vmussato/task-manager"
 ---
 
 # App de Gerenciamento de Tarefas

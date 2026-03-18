@@ -50,7 +50,7 @@ export default async function Home() {
 
           <div className="flex gap-4 justify-center mb-12">
             <a
-              href="https://github.com/seu-usuario"
+              href="https://github.com/vmussato"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
@@ -58,7 +58,7 @@ export default async function Home() {
               {t('home.github')}
             </a>
             <a
-              href="https://linkedin.com/in/seu-usuario"
+              href="https://linkedin.com/in/vmussato"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
@@ -66,7 +66,7 @@ export default async function Home() {
               {t('home.linkedin')}
             </a>
             <a
-              href="mailto:seu-email@exemplo.com"
+              href="mailto:vinicius.mussato@gmail.com"
               className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
             >
               {t('home.contact')}
