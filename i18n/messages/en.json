@@ -2,7 +2,8 @@
   "nav": {
     "portfolio": "My Portfolio",
     "blog": "Blog",
-    "projects": "Projects"
+    "projects": "Projects",
+    "resume": "Resume"
   },
   "home": {
     "greeting": "Hi, I'm [Your Name]",
@@ -29,6 +30,18 @@
     "backToHome": "← Back to Home",
     "backToProjects": "← Back to Projects",
     "technologies": "Technologies"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Download my resume in different languages",
+    "downloadBtn": "Download Resume",
+    "portuguese": "Portuguese",
+    "english": "English",
+    "spanish": "Spanish",
+    "fileSize": "PDF - {size}",
+    "lastUpdated": "Last updated: {date}",
+    "description": "My resume contains detailed information about my professional experience, education, technical skills, and projects. Choose your preferred language to download.",
+    "backToHome": "← Back to Home"
   },
   "common": {
     "profileAlt": "Profile picture"

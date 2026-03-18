@@ -2,7 +2,8 @@
   "nav": {
     "portfolio": "Meu Portfólio",
     "blog": "Blog",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "resume": "Currículo"
   },
   "home": {
     "greeting": "Olá, eu sou [Seu Nome]",
@@ -29,6 +30,18 @@
     "backToHome": "← Voltar para Home",
     "backToProjects": "← Voltar para Projetos",
     "technologies": "Tecnologias"
+  },
+  "resume": {
+    "title": "Currículo",
+    "subtitle": "Faça o download do meu currículo em diferentes idiomas",
+    "downloadBtn": "Baixar Currículo",
+    "portuguese": "Português",
+    "english": "Inglês",
+    "spanish": "Espanhol",
+    "fileSize": "PDF - {size}",
+    "lastUpdated": "Última atualização: {date}",
+    "description": "Meu currículo contém informações detalhadas sobre minha experiência profissional, educação, habilidades técnicas e projetos. Escolha o idioma de sua preferência para fazer o download.",
+    "backToHome": "← Voltar para Home"
   },
   "common": {
     "profileAlt": "Foto de perfil"
