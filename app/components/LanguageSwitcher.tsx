@@ -1,7 +1,6 @@
 'use client';
 
-import { useParams, usePathname } from 'next/navigation';
-import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import { locales, localeNames, type Locale } from '@/i18n.config';
 
 // Mapear locales para emojis de bandeiras
@@ -13,28 +12,45 @@ const flagEmojis: Record<Locale, string> = {
 
 export default function LanguageSwitcher() {
   const params = useParams();
-  const pathname = usePathname();
-
   const currentLocale = (params.locale as Locale) || 'pt-BR';
 
-  // Função para construir o caminho no novo locale
-  const getLocalePath = (newLocale: Locale) => {
-    // usePathname() retorna o path sem o locale
-    // Então só precisamos adicionar o novo locale
-    const path = pathname || '/';
-    // Remove trailing slash se não for a raiz
-    const cleanPath = path === '/' ? '/' : path.replace(/\/$/, '');
-    return `/${newLocale}${cleanPath}`;
+  // Função para trocar de idioma mantendo o path atual
+  const handleLanguageChange = (newLocale: Locale) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const currentPath = window.location.pathname;
+    let pathWithoutLocale = currentPath;
+
+    // Remove o locale atual do path
+    for (const loc of locales) {
+      const localePrefix = `/${loc}`;
+      if (currentPath === localePrefix || currentPath.startsWith(`${localePrefix}/`)) {
+        pathWithoutLocale = currentPath.substring(localePrefix.length);
+        break;
+      }
+    }
+
+    // Garante que começa com /
+    if (!pathWithoutLocale.startsWith('/')) {
+      pathWithoutLocale = '/' + pathWithoutLocale;
+    }
+
+    // Constrói o novo path
+    const newPath = `/${newLocale}${pathWithoutLocale}`;
+
+    // Navega para o novo path
+    window.location.href = newPath;
   };
 
   return (
     <div className="flex gap-1">
       {locales.map((locale) => {
         return (
-          <Link
+          <a
             key={locale}
-            href={getLocalePath(locale)}
-            className={`p-2 rounded-md text-lg transition-all transform hover:scale-110 ${
+            href={`/${locale}/`}
+            onClick={handleLanguageChange(locale)}
+            className={`p-2 rounded-md text-lg transition-all transform hover:scale-110 cursor-pointer ${
               currentLocale === locale
                 ? 'bg-gray-800 dark:bg-white shadow-lg ring-2 ring-blue-500'
                 : 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600'
@@ -42,7 +58,7 @@ export default function LanguageSwitcher() {
             title={localeNames[locale]}
           >
             <span className="text-xl">{flagEmojis[locale]}</span>
-          </Link>
+          </a>
         );
       })}
     </div>
