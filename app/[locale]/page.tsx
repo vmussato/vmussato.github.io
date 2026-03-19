@@ -29,6 +29,9 @@ export default async function Home({
             <Link locale={currentLocale} href="/projects" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
               {t('nav.projects')}
             </Link>
+            <Link locale={currentLocale} href="/contact" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
+              {t('nav.contact')}
+            </Link>
             <LanguageSwitcher />
           </div>
         </nav>
@@ -72,12 +75,13 @@ export default async function Home({
             >
               {t('home.linkedin')}
             </a>
-            <a
-              href="mailto:vinicius.mussato@gmail.com"
+            <Link
+              locale={currentLocale}
+              href="/contact"
               className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
             >
               {t('home.contact')}
-            </a>
+            </Link>
           </div>
 
           {/* Quick Links */}

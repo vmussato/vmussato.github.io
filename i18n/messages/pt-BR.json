@@ -3,7 +3,8 @@
     "portfolio": "Meu Portfólio",
     "blog": "Blog",
     "projects": "Projetos",
-    "resume": "Currículo"
+    "resume": "Currículo",
+    "contact": "Contato"
   },
   "home": {
     "greeting": "Olá, eu sou Vinícius Mussato",
@@ -42,6 +43,32 @@
     "lastUpdated": "Última atualização: {date}",
     "description": "Meu currículo contém informações detalhadas sobre minha experiência profissional, educação, habilidades técnicas e projetos. Escolha o idioma de sua preferência para fazer o download.",
     "backToHome": "← Voltar para Home"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Estes são os principais canais para falar comigo sobre oportunidades, projetos, colaboração e tecnologia.",
+    "availability": "Prefiro receber o primeiro contato por email ou LinkedIn. Se quiser, posso incluir telefone e WhatsApp assim que esses dados forem adicionados ao projeto.",
+    "backToHome": "← Voltar para Home",
+    "items": {
+      "email": {
+        "label": "Email"
+      },
+      "phone": {
+        "label": "Telefone"
+      },
+      "linkedin": {
+        "label": "LinkedIn"
+      },
+      "github": {
+        "label": "GitHub"
+      },
+      "website": {
+        "label": "Site"
+      },
+      "location": {
+        "label": "Localização"
+      }
+    }
   },
   "common": {
     "profileAlt": "Foto de perfil"
