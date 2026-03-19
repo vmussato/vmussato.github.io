@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { locales } from '@/i18n.config';
+import { locales, type Locale } from '@/i18n.config';
 
 export const dynamic = 'force-static';
 
@@ -23,6 +23,7 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  setRequestLocale(locale as Locale);
   const messages = await getMessages({ locale });
 
   return (
