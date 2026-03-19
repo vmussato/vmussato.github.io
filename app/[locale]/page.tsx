@@ -6,8 +6,13 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 
 export const dynamic = 'force-static';
 
-export default async function Home() {
-  const t = await getTranslations();
+export default async function Home({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale });
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
