@@ -19,9 +19,12 @@ export default function LanguageSwitcher() {
 
   // Função para construir o caminho no novo locale
   const getLocalePath = (newLocale: Locale) => {
-    // Remove o locale atual do pathname e adiciona o novo
-    const pathWithoutLocale = pathname?.replace(`/${currentLocale}`, '') || '';
-    return `/${newLocale}${pathWithoutLocale}`;
+    // usePathname() retorna o path sem o locale
+    // Então só precisamos adicionar o novo locale
+    const path = pathname || '/';
+    // Remove trailing slash se não for a raiz
+    const cleanPath = path === '/' ? '/' : path.replace(/\/$/, '');
+    return `/${newLocale}${cleanPath}`;
   };
 
   return (
