@@ -4,12 +4,12 @@ import { useParams } from 'next/navigation';
 import { useTransition } from 'react';
 import { usePathname, useRouter } from '@/lib/navigation';
 import { locales, localeNames, type Locale } from '@/i18n.config';
+import { BrazilFlag, SpainFlag, USAFlag } from './flags';
 
-// Mapear locales para emojis de bandeiras
-const flagEmojis: Record<Locale, string> = {
-  'pt-BR': '🇧🇷',
-  'en': '🇺🇸',
-  'es': '🇪🇸'
+const flagComponents: Record<Locale, React.FC<{ size?: number; className?: string }>> = {
+  'pt-BR': BrazilFlag,
+  'en': USAFlag,
+  'es': SpainFlag
 };
 
 export default function LanguageSwitcher() {
@@ -33,6 +33,7 @@ export default function LanguageSwitcher() {
     <div className="flex gap-1">
       {locales.map((locale) => {
         const isActive = currentLocale === locale;
+        const FlagComponent = flagComponents[locale];
 
         return (
           <button
@@ -49,7 +50,7 @@ export default function LanguageSwitcher() {
             aria-label={`Mudar idioma para ${localeNames[locale]}`}
             aria-pressed={isActive}
           >
-            <span className="text-xl">{flagEmojis[locale]}</span>
+            <FlagComponent size={24} />
           </button>
         );
       })}
