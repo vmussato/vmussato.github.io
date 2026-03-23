@@ -36,6 +36,9 @@ export default async function BlogPost({
             <Link locale={currentLocale} href="/projects" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
               {t('nav.projects')}
             </Link>
+            <Link locale={currentLocale} href="/resume" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
+              {t('nav.resume')}
+            </Link>
             <Link locale={currentLocale} href="/contact" className="text-sm sm:text-base text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">
               {t('nav.contact')}
             </Link>
